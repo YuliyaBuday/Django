@@ -1,4 +1,4 @@
-"""first URL Configuration
+"""month URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from seasons import views
-urlpatterns = [
-    #path('admin/', admin.site.urls),
-    path('<seasons/>', views.index),
+from description.views import name_of_month
 
-]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('<str:name_of_month>/', name_of_month),
+
+    ]
